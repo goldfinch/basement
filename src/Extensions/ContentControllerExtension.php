@@ -10,7 +10,7 @@ class ContentControllerExtension extends Extension
     public function onBeforeInit()
     {
         if (
-            !BaseHelper::is_bot($_SERVER['HTTP_USER_AGENT']) &&
+            !BaseHelper::is_bot($_SERVER['HTTP_USER_AGENT'] ?? '') &&
             $this->owner->ShowOnlyToRobots
         ) {
             if ($this->owner->ShowOnlyToRobots_BacklinkID) {
